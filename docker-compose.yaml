@@ -1,0 +1,21 @@
+version: '3.8'
+
+networks:
+  mynet:
+    driver: bridge
+
+services:
+
+  discovery-service:
+    image: ion21/discovery-service:v2
+    networks:
+      - mynet
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+#
+#      SPRING_APPLICATION_NAME: query
+#      APPLICATION_JWT_SECRETKEY: asdasdasdasdasd123344asdasdasdasdasasd12321332sadas
+#      APPLICATION_JWT_TOKENPREFIX: Bearer
+#      APPLICATION_JWT_TOKENEXPIRATIONAFTERDAYS: "7"
